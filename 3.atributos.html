@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atributos do HTML</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 900px;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #0056b3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #f9f9f9;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Atributos do HTML</h1>
+  <p>Os <strong>atributos do HTML</strong> são informações adicionais fornecidas às <strong>tags</strong> para modificar
+    seu comportamento ou aparência. Eles são escritos <strong>dentro da tag de abertura</strong> e seguem a estrutura:
+  </p>
+
+  <pre>
+        &lt;tag atributo="valor"&gt;Conteúdo&lt;/tag&gt;
+    </pre>
+
+  <p>Exemplo de um link:</p>
+  <pre>
+        &lt;a href="https://www.exemplo.com" target="_blank"&gt;Visite o site&lt;/a&gt;
+    </pre>
+
+  <h2>1. Atributos Globais</h2>
+  <p>Os <strong>atributos globais</strong> podem ser aplicados a qualquer elemento HTML.</p>
+  <table>
+    <tr>
+      <th>Atributo</th>
+      <th>Descrição</th>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>Define um identificador único para um elemento.</td>
+    </tr>
+    <tr>
+      <td>class</td>
+      <td>Define uma ou mais classes CSS para o elemento.</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>Adiciona estilos CSS diretamente ao elemento.</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>Texto exibido ao passar o mouse sobre o elemento.</td>
+    </tr>
+  </table>
+
+  <h2>2. Atributos Específicos de Tags</h2>
+  <h3>Atributos da Tag &lt;a&gt; (Links)</h3>
+  <p>Os atributos da tag <code>&lt;a&gt;</code> controlam o comportamento dos links.</p>
+  <table>
+    <tr>
+      <th>Atributo</th>
+      <th>Descrição</th>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>Define o destino do link.</td>
+    </tr>
+    <tr>
+      <td>target</td>
+      <td>Especifica onde abrir o link (_self, _blank, _parent, _top).</td>
+    </tr>
+  </table>
+
+  <h3>Atributos da Tag &lt;img&gt; (Imagens)</h3>
+  <p>Os atributos da tag <code>&lt;img&gt;</code> definem propriedades da imagem.</p>
+  <table>
+    <tr>
+      <th>Atributo</th>
+      <th>Descrição</th>
+    </tr>
+    <tr>
+      <td>src</td>
+      <td>Define o caminho da imagem.</td>
+    </tr>
+    <tr>
+      <td>alt</td>
+      <td>Texto alternativo exibido caso a imagem não carregue.</td>
+    </tr>
+  </table>
+
+  <h2>3. Atributos de Eventos (Interação com JavaScript)</h2>
+  <p>Os atributos de eventos são usados para definir ações disparadas por interações do usuário.</p>
+  <table>
+    <tr>
+      <th>Atributo</th>
+      <th>Descrição</th>
+    </tr>
+    <tr>
+      <td>onclick</td>
+      <td>Executa uma ação quando o elemento é clicado.</td>
+    </tr>
+    <tr>
+      <td>onmouseover</td>
+      <td>Executa uma ação quando o mouse passa sobre o elemento.</td>
+    </tr>
+  </table>
+
+  <h2>4. Atributos Booleanos</h2>
+  <p>Os atributos booleanos são aqueles que não precisam de valores, apenas sua presença já os ativa.</p>
+  <table>
+    <tr>
+      <th>Atributo</th>
+      <th>Descrição</th>
+    </tr>
+    <tr>
+      <td>checked</td>
+      <td>Define um checkbox ou radio como pré-selecionado.</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>Desativa o elemento.</td>
+    </tr>
+  </table>
+
+  <h2>5. Atributos Personalizados (data-*)</h2>
+  <p>Os atributos <code>data-*</code> permitem armazenar dados personalizados.</p>
+  <pre>
+        &lt;button data-id="123" data-usuario="Matheus"&gt;Clique aqui&lt;/button&gt;
+    </pre>
+
+  <pre>
+    <span>Javascript</span>
+    <code>
+      const botao = document.querySelector("button");
+      console.log(botao.dataset.id); // 123
+      console.log(botao.dataset.usuario); // Matheus
+    </code>
+  </pre>
+
+  <h2>Conclusão</h2>
+  <p>Os atributos do HTML são essenciais para modificar o comportamento dos elementos e interagir com CSS e JavaScript.
+  </p>
+  <ul>
+    <li><strong>Globais</strong> – Aplicáveis a qualquer tag.</li>
+    <li><strong>Específicos</strong> – Apenas para certas tags (ex: href para &lt;a&gt;).</li>
+    <li><strong>Eventos</strong> – Para interações com JavaScript (ex: onclick).</li>
+    <li><strong>Booleanos</strong> – Ativados apenas com sua presença.</li>
+    <li><strong>Personalizados</strong> – Criados com data-* para uso em scripts.</li>
+  </ul>
+</body>
+
+</html>
