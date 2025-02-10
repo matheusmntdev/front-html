@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação sobre Formulários HTML</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 20px;
+      color: #333;
+    }
+
+    h2 {
+      color: #4CAF50;
+    }
+
+    h3 {
+      color: #333;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    pre {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .highlight {
+      background-color: #fff8e1;
+      padding: 5px;
+      border: 1px solid #ffeb3b;
+      border-radius: 4px;
+    }
+
+    .example-code {
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-left: 4px solid #4CAF50;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Apresentação sobre Formulários em HTML</h2>
+
+    <div class="section">
+      <h3>1. O que é um Formulário HTML?</h3>
+      <p>Um formulário em HTML é um mecanismo usado para coletar informações dos usuários. Ele pode ser utilizado para
+        várias finalidades, como realizar cadastros, fazer pesquisas, etc.</p>
+      <p><strong>Exemplo:</strong> Um formulário de cadastro de usuário.</p>
+    </div>
+
+    <div class="section">
+      <h3>2. A Tag <code>&lt;form&gt;</code></h3>
+      <p>A tag <code>&lt;form&gt;</code> é a estrutura básica para um formulário. Ela contém os campos de entrada e
+        também os atributos que determinam como e para onde os dados serão enviados.</p>
+      <pre><code>&lt;form action="URL" method="POST"&gt;</code></pre>
+      <p>Atributos importantes da tag <code>&lt;form&gt;</code>:</p>
+      <ul>
+        <li><code>action</code>: Define para qual URL os dados do formulário serão enviados.</li>
+        <li><code>method</code>: Define o método HTTP usado para o envio (geralmente <code>POST</code> ou
+          <code>GET</code>).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>3. Exemplos de Campos de Entrada</h3>
+      <p>A seguir estão alguns exemplos de campos de entrada que você pode usar dentro de um formulário:</p>
+
+      <div class="example-code">
+        <h4>Campo de Texto (nome)</h4>
+        <pre><code>&lt;label for="nome"&gt;Nome:&lt;/label&gt;
+&lt;input type="text" id="nome" name="nome"&gt;</code></pre>
+      </div>
+      <p><strong>Descrição:</strong> O campo de texto permite que o usuário insira informações simples, como seu nome.
+      </p>
+
+      <div class="example-code">
+        <h4>Campo de Senha (senha)</h4>
+        <pre><code>&lt;label for="senha"&gt;Senha:&lt;/label&gt;
+&lt;input type="password" id="senha" name="senha"&gt;</code></pre>
+      </div>
+      <p><strong>Descrição:</strong> O campo de senha oculta o que é digitado para proteger informações confidenciais.
+      </p>
+
+      <div class="example-code">
+        <h4>Botão de Envio (submit)</h4>
+        <pre><code>&lt;input type="submit" value="Enviar"&gt;</code></pre>
+      </div>
+      <p><strong>Descrição:</strong> O botão de envio envia os dados do formulário para o servidor.</p>
+    </div>
+
+    <div class="section">
+      <h3>4. Campos de Seleção</h3>
+      <p>Você também pode usar campos de seleção, como caixas de seleção e botões de rádio:</p>
+
+      <div class="example-code">
+        <h4>Campo de Gênero (botões de rádio)</h4>
+        <pre><code>&lt;label for="masculino"&gt;Masculino&lt;/label&gt;
+&lt;input type="radio" id="masculino" name="genero" value="masculino"&gt;
+
+&lt;label for="feminino"&gt;Feminino&lt;/label&gt;
+&lt;input type="radio" id="feminino" name="genero" value="feminino"&gt;</code></pre>
+      </div>
+      <p><strong>Descrição:</strong> Os botões de rádio permitem que o usuário selecione apenas uma opção entre várias.
+      </p>
+
+      <div class="example-code">
+        <h4>Campo de Seleção (menu suspenso)</h4>
+        <pre><code>&lt;label for="pais"&gt;Selecione seu País:&lt;/label&gt;
+&lt;select id="pais" name="pais"&gt;
+    &lt;option value="brasil"&gt;Brasil&lt;/option&gt;
+    &lt;option value="portugal"&gt;Portugal&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+      </div>
+      <p><strong>Descrição:</strong> O campo de seleção permite que o usuário escolha uma opção de uma lista suspensa.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>5. Validação de Formulários</h3>
+      <p>Você pode adicionar validação diretamente no HTML para garantir que os dados inseridos pelos usuários estejam
+        no formato correto.</p>
+      <ul>
+        <li><code>required</code>: Torna o campo obrigatório.</li>
+        <li><code>type="email"</code>: Garante que o campo contenha um endereço de e-mail válido.</li>
+        <li><code>type="number"</code>: Garante que o campo aceite apenas números.</li>
+      </ul>
+      <div class="example-code">
+        <h4>Exemplo com Validação</h4>
+        <pre><code>&lt;input type="email" id="email" name="email" required&gt;</code></pre>
+      </div>
+      <p><strong>Descrição:</strong> Neste exemplo, o campo de e-mail é obrigatório e só aceita valores em formato de
+        e-mail.</p>
+    </div>
+
+    <div class="section">
+      <h3>6. Exemplo Completo de Formulário</h3>
+      <p>Abaixo está um exemplo completo de formulário com diversos campos:</p>
+      <div class="example-code">
+        <pre><code>&lt;form action="/cadastro" method="POST"&gt;
+    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome" required&gt;
+
+    &lt;label for="email"&gt;E-mail:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+
+    &lt;label for="senha"&gt;Senha:&lt;/label&gt;
+    &lt;input type="password" id="senha" name="senha" required&gt;
+
+    &lt;label for="genero"&gt;Gênero:&lt;/label&gt;
+    &lt;input type="radio" id="masculino" name="genero" value="masculino"&gt; Masculino
+    &lt;input type="radio" id="feminino" name="genero" value="feminino"&gt; Feminino
+
+    &lt;label for="comentarios"&gt;Comentários:&lt;/label&gt;
+    &lt;textarea id="comentarios" name="comentarios"&gt;&lt;/textarea&gt;
+
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
